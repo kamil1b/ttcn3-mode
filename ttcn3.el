@@ -1,5 +1,6 @@
 ;;; ttcn3.el --- a major mode for editing TTCN-3 core language files
 
+;; Copyright (C) 2019 Kamil Łuczak <kamilluczak@luczakweb.pl>
 ;; Copyright (C) 2000-2005 W. Martin Borgert <debacle@debian.org>
 
 ;; Author:     2000 W. Martin Borgert <debacle@debian.org>
@@ -26,14 +27,14 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-(require 'cc-mode)			; ttcn-3-mode inherits from cc-mode
+(require 'cc-mode)			; ttcn3-mode inherits from cc-mode
 
 (eval-when-compile
   (require 'cc-langs)
   (require 'cc-fonts))
 
 (eval-and-compile
-  (c-add-language 'ttcn-3-mode 'c-mode))
+  (c-add-language 'ttcn3-mode 'c-mode))
 
 (defconst c-TTCN3-conditional-key "do\\|else\\|for\\|if\\|while")
 (defconst c-TTCN3-comment-start-regexp "/\\([*][*]?\\)")
@@ -446,7 +447,7 @@ If point is on a keyword, help for that keyword will be shown."
 (ttcn3-add-extensions ".ttcn(3)?")
 
 ;;;###autoload
-(define-derived-mode ttcn-3-mode c-mode "TTCN-3"
+(define-derived-mode ttcn3-mode c-mode "TTCN-3"
   "Major mode for editing TTCN-3 core language.  Reference: rev. 5 of
 the BNF with changes until 2001-10.
 
@@ -457,8 +458,8 @@ in the info documenation for that mode."
   (setq local-abbrev-table ttcn3-mode-abbrev-table
 	abbrev-mode t)
   (use-local-map ttcn3-mode-map)
-  (c-init-language-vars ttcn-3-mode)
-  (c-common-init 'ttcn-3-mode)
+  (c-init-language-vars ttcn3-mode)
+  (c-common-init 'ttcn3-mode)
   (setq comment-start "/* "
 	comment-end   " */"
  	c-conditional-key c-TTCN3-conditional-key
@@ -477,7 +478,5 @@ in the info documenation for that mode."
        '(ttcn3-font-lock-keywords nil nil ((?_ . "w"))))
   (c-run-mode-hooks 'c-mode-common-hook 'ttcn3-mode-hook)
   (c-update-modeline))
-
-(provide 'ttcn3)
-
+(provide 'ttcn3-mode)
 ;;; ttcn3.el ends here
