@@ -145,24 +145,25 @@
 	  (concat
 	   "\\<"
 	   (regexp-opt
-	    '("action" "activate" "all" "alt" "and" "and4b" "any"
-              "call" "catch" "check" "clear" "connect" "const"
-              "control" "create" "deactivate" "disconnect" "display"
-              "do" "done" "else" "encode" "error" "except" "exception"
-              "execute" "expand" "extension" "external" "fail" "false"
-              "for" "from" "get" "getcall" "getreply" "getverdict" "goto" "if"
-              "ifpresent" "import" "in" "inconc" "infinity" "inout"
-              "interleave" "label" "length" "log" "map" "match"
-              "message" "mixed" "mod" "modifies" "modulepar" "mtc" "none"
-              "nonrecursive" "not" "not4b" "nowait" "null" "omit"
-              "optional" "or" "or4b" "out" "param" "pass" "pattern"
-              "procedure" "raise" "read" "receive" "rem" "repeat"
-              "reply" "return" "running" "runs on" "self" "send"
-              "sender" "setverdict" "signature" "start" "stop" "sut.action"
-              "system" "template" "timeout" "timer" "to" "trigger"
-              "true" "type" "unmap" "value" "valueof" "var"
-              "verdict.get" "verdict.set" "while" "with" "xor"
-              "xor4b") t) "\\>")
+	    '("@default" "@deterministic" "@fuzzy" "@index" "@lazy"
+        "action" "activate" "all" "alt" "altstep" "and" "and4b" "any"
+        "call" "catch" "case" "check" "clear" "connect" "const"
+        "control" "create" "deactivate" "disconnect" "display"
+        "do" "done" "else" "encode" "error" "except" "exception"
+        "execute" "expand" "extends" "extension" "external" "fail" "false"
+        "for" "friend" "from" "get" "getcall" "getreply" "getverdict"
+        "goto" "group" "if" "ifpresent" "import" "in" "inconc"
+        "infinity" "inout" "interleave" "label" "length" "log" "map" "match"
+        "message" "mixed" "mod" "modifies" "modulepar" "mtc" "none"
+        "nonrecursive" "not" "not4b" "nowait" "null" "omit"
+        "optional" "or" "or4b" "out" "param" "pass" "pattern"
+        "private" "procedure" "public" "raise" "read" "receive"
+        "rem" "repeat" "reply" "return" "running" "runs on" "select" "self"
+        "send" "sender" "setverdict" "signature" "start" "stop" "sut.action"
+        "system" "template" "timeout" "timer" "to" "trigger"
+        "true" "type" "unmap" "value" "valueof" "var"
+        "verdict.get" "verdict.set" "while" "with" "xor"
+        "xor4b") t) "\\>")
 	  '(1 font-lock-keyword-face))
 	 ;; TTCN-3 predefined (built-in) functions
 	 (list
@@ -172,9 +173,9 @@
 	    '("bit2hex" "bit2int" "bit2oct" "bit2str" "char2int" "float2int"
 	      "hex2bit" "hex2int" "hex2oct" "hex2str" "int2bit" "int2char"
 	      "int2float" "int2hex" "int2oct" "int2str" "int2unichar" "ischosen"
-	      "ispresent" "lengthof" "oct2bit" "oct2hex" "oct2int"
+	      "ispresent" "lengthof" "oct2bit" "oct2hex" "oct2int" "isbound"
 	      "oct2str" "regexp" "rnd" "sizeof" "str2int" "str2oct"
-	      "substr" "unichar2int") t) "\\>")
+	      "substr" "unichar2int" "encvalue" "decvalue") t) "\\>")
 	  '(1 (ttcn3-builtin-face)))
 	 ;; TTCN-3 types
 	 (list
