@@ -37,7 +37,7 @@
   (c-add-language 'ttcn3-mode 'c-mode))
 
 (defconst c-TTCN3-conditional-key "do\\|else\\|for\\|if\\|while")
-(defconst c-TTCN3-comment-start-regexp "/\\([*][*]?\\)")
+(defconst c-TTCN3-comment-start-regexp "//")
 (defconst c-TTCN3-defun-prompt-regexp "\\<function\\>")
 (defvar c-ttcn3-menu nil)
 
@@ -461,8 +461,8 @@ in the info documenation for that mode."
   (use-local-map ttcn3-mode-map)
   (c-init-language-vars ttcn3-mode)
   (c-common-init 'ttcn3-mode)
-  (setq comment-start "/* "
-	comment-end   " */"
+  (setq comment-start "// "
+	comment-end   ""
  	c-conditional-key c-TTCN3-conditional-key
  	c-comment-start-regexp c-TTCN3-comment-start-regexp
 	c-method-key nil
